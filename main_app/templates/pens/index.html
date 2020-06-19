@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Pen List</h1>
+
+{% for pen in pens %}
+	<a href="{% url 'detail' pen.id %}">
+		<div class="card">
+			<div class="card-content">
+				<span class="card-title">{{ pen.name }}</span>
+				<p>Brand: {{ pen.brand }}</p>
+				<p>Style: {{ pen.style }}</p>
+				<p>Features: {{ pen.features }}
+			</div>
+		</div>
+	</a>
+{% endfor %}
+
+{% endblock %}
